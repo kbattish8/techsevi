@@ -1,0 +1,193 @@
+/* Common Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bree Serif', serif;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 98px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#logo {
+    margin: 10px 34px;
+}
+
+#logo img {
+    height: 59px;
+    margin: 3px 6px;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+    margin: 0 10px;
+}
+
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 3px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: red;
+    background-color: white;
+}
+
+/* About Us Section Styling */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.info {
+    width: 50%;
+}
+
+.info .title {
+    font-size: 2.5rem;
+    color: #40c9a2;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.info .title::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 5px;
+    margin: 10px auto;
+    background-color: #40c9a2;
+    border-radius: 25px;
+}
+
+.artical h3 {
+    color: #555;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.para {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #40c9a2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn a:hover {
+    background-color: #f28f92;
+}
+
+/* Image Styling */
+.image {
+    width: 40%;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Links */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    clear: both; 
+    text-align: center;
+}
+
+.social a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #40c9a2;
+}
+
+.social i {
+    font-size: 1.8rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info, .image {
+        width: 100%;
+    }
+
+    .info .title {
+        font-size: 2rem;
+    }
+
+    .artical h3 {
+        font-size: 1.5rem;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar ul li {
+        margin: 5px 0;
+    }
+
+    .social {
+        margin-top: 30px;
+        order: 1; 
+    }
+}
