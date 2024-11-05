@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" href="nav.css">
+</head>
 <nav id="navbar">
     <div id="logo">
         <img src="1.png" alt="TechHome">
@@ -9,7 +12,7 @@
         <li class="item"><a href="aboutus.php">About</a></li>
         <li class="item"><a href="booking.php">Book Trial</a></li>
         <li class="item"><a href="contact-us.php">Contact-Us</a></li>
-
+        
         <?php
         if (isset($_SESSION['auth'])) {
             echo "<li class='item' style= 'color:white;'>" . $_SESSION['auth_user']['name'] . "</li>";
@@ -18,5 +21,7 @@
             echo "<li class='item'><a href='login.php'>Log-in</a></li>";
         }
         ?>
+        
+        <li class="item"><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
     </ul>
 </nav>

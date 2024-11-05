@@ -20,4 +20,5 @@ function getbyId($table,$id)
     return $res=mysqli_query($con,$query);
 }
 
+
 ?>
