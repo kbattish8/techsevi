@@ -79,4 +79,30 @@ $(document).ready(function () {
         });
     });
 
+    $(document).on('click','.del-item', function () {
+        var cart_id=$(this).val();
+        // alert(cart_id);
+
+        $.ajax({
+            method:"POST",
+            url: "functions/handlecart.php",
+            data: {
+                "cart_id": cart_id,
+                "scope": "delete"
+            },
+            success: function (response) {
+                alertify.set('notifier', 'position', 'top-right');
+                if (response.status == 201) {
+                    alertify.success("Item Removed Successfully");
+                    $('#cart-item-' + response.cart_id).remove();
+                }
+                else
+                {
+                    alertify.error("Item not found");
+                }
+            }
+        });
+    });
+
+
 });

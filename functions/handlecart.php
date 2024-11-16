@@ -54,7 +54,27 @@ if (isset($_SESSION['auth'])) {
         } else {
             echo json_encode(["status" => 404, "error" => "Product not found in cart"]);
         }
-    } else {
+    } 
+    elseif (isset($_POST['scope']) && $_POST['scope'] === "delete")
+    {
+        $cart_id = mysqli_real_escape_string($con, $_POST['cart_id']);
+        $user_id = $_SESSION['auth_user']['user_id'];
+        $chk_cart = "SELECT * FROM carts WHERE id='$cart_id' AND user_id='$user_id'";
+        $result_chk_cart = mysqli_query($con, $chk_cart);
+
+        if (mysqli_num_rows($result_chk_cart) > 0) {
+            $delete_query = "DELETE FROM carts WHERE id='$cart_id'";
+            $res = mysqli_query($con, $delete_query);
+            if ($res) {
+                echo json_encode(["status" => 201,"cart_id" => $cart_id]);
+            } else {
+                echo json_encode(["status" => 500, "error" => mysqli_error($con)]);
+            }
+        } else {
+            echo json_encode(["status" => 404, "error" => "Product not found in cart"]);
+        }
+    }
+    else {
         echo json_encode(["status" => 500, "error" => "Invalid scope"]);
     }
 } else {
