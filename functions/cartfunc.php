@@ -10,4 +10,22 @@ function getCartItems()
               ORDER BY c.id DESC";
     return $res = mysqli_query($con, $query);
 }
+
+function getOrders()
+{
+    global $con;
+    $uid = $_SESSION["auth_user"]["user_id"];
+    $query = "SELECT * FROM orders WHERE user_id='$uid' ORDER BY id DESC";
+    return $query_run = mysqli_query($con, $query);
+
+}
+
+function CheckTrackingNOVaild($trackingNo)
+{
+    global $con;
+    $uid = $_SESSION["auth_user"]["user_id"];
+    $query = "SELECT * FROM orders Where tracking_no='$trackingNo' AND user_id='$uid'";
+    return mysqli_query($con, $query);
+}
+
 ?>

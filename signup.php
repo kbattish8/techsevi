@@ -169,11 +169,6 @@ if(isset($_SESSION['auth'])) {
             </div>
             <button type="submit" name="b1">Sign Up</button>
         </form>
-        <div class="or">Or</div>
-        <div class="icon-button">
-            <span class="facebook"><i class="fa fa-facebook"></i> Facebook</span>
-            <span><i class="fa fa-google"></i> Google</span>
-        </div>
         <a href="login.php">Existing User? Login</a>
     </div>
 </div>

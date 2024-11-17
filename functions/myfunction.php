@@ -20,5 +20,29 @@ function getbyId($table,$id)
     return $res=mysqli_query($con,$query);
 }
 
+function getALLOrders()
+{
+    global $con;
+    $uid = $_SESSION["auth_user"]["user_id"];
+    $query = "SELECT * FROM orders WHERE status='0'";
+    return $query_run = mysqli_query($con, $query);
+
+}
+function getOrdersHistory()
+{
+    global $con;
+    $uid = $_SESSION["auth_user"]["user_id"];
+    $query = "SELECT * FROM orders WHERE status!='0'";
+    return $query_run = mysqli_query($con, $query);
+
+}
+
+function CheckTrackingNOVaild($trackingNo)
+{
+    global $con;
+    $uid = $_SESSION["auth_user"]["user_id"];
+    $query = "SELECT * FROM orders Where tracking_no='$trackingNo'";
+    return mysqli_query($con, $query);
+}
 
 ?>

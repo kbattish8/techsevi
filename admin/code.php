@@ -84,5 +84,17 @@ if (isset($_POST['add_product'])) {
     } else {
         redirect("products.php", "Something Went Wrong");
     }
+}elseif(isset($_POST['update_order_btn']))
+{
+    $track_no=$_POST['tracking_no'];
+    $order_stauts=$_POST['order-status'];
+    $up_query="UPDATE orders SET status='$order_stauts' WHERE tracking_no='$track_no'";
+    $up_run = mysqli_query($con, $up_query);
+    if ($up_run) {
+        redirect("view-order.php?t=$track_no", "Updated Successfully");
+    } else {
+        redirect("view-order.php?t=$track_no", "Update Failed");
+    }
+
 }
 ?>

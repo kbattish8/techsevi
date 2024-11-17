@@ -1,7 +1,7 @@
 <?php 
 include('includes/header.php'); 
 include('../middleware/adminmiddle.php'); 
-// include ('../functions/myfunction.php');
+
 ?>
 <div class="container">
     <div class="row">

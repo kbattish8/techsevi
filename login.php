@@ -223,11 +223,6 @@ if (isset($_POST['b1'])) {
                     <input type="password" placeholder="Password" name="t2">
                 </div>
                 <button type="submit" name="b1">Log in</button>
-                <div class="or">Or</div>
-                <div class="icon-button">
-                    <span class="facebook"><i class="fa fa-facebook"></i> Facebook</span>
-                    <span><i class="fa fa-google"></i> Google</span>
-                </div>
                 <div style="margin-top: 20px; text-align:center;">
                     <a href="signup.php">Not an existing user? Sign up</a>
                 </div>
