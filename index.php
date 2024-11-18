@@ -55,14 +55,6 @@ session_start();
                             <img src='uploads/$img' alt='not available'>
                         </div>
                         </a>
-                        <div class='product-btns'>
-                            <button type='button' class='btn-cart'>Add to cart
-                                <span><i class='fa fa-plus'></i></span>
-                            </button>
-                            <a href='payment.php?id=$pid' class='btn-buy'> Buy now
-                                <span><i class='fa fa-shopping-cart'></i></span>
-                            </a>
-                        </div>
                         
                     </div>
                     <div class='product-info'>
@@ -96,3 +88,12 @@ session_start();
     </footer>
 </body>
 </html>
+
+<!-- <div class='product-btns'>
+<button type='button' class='btn-cart'>Add to cart
+    <span><i class='fa fa-plus'></i></span>
+</button>
+<a href='payment.php?id=$pid' class='btn-buy'> Buy now
+    <span><i class='fa fa-shopping-cart'></i></span>
+</a>
+</div> -->
