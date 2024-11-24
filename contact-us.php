@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,188 +9,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact-US</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="shortcut icon" href="favicon.ico">
-</head>
+    <title>Contact Us</title>
 
+    <!-- External CSS and Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="contact.css">
+</head>
 
 <body>
 
+    <!-- Navbar Section -->
     <section>
-        <nav id="navbar">
-            <div id="logo">
-                <img src="1.png" alt="TechHome">
-            </div>
-            <!-- <a href="#navbar"><button id="top">
-                <i class="material-icons">arrow_upward</i>
-            </button></a> -->
-            <ul>
-                <li class="item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-                <li class="item"><a href="index.php"><i class="fa fa-bars"></i> Products</a></li>
-                <li class="item"><a href="aboutus.php">About</a></li>
-                <li class="item"><a href="booking.php">Book Trial</a></li>
-                <li class="item"><a href="contact-us.php">Contact-Us</a></li>
-                <li class="item"><a href="login.php">Log-in</a></li>
-            </ul>
-            <div class="icons">
-                <a href="#"><i class="fa fa-facebook-f fa-2x"></i></a>
-                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
-            </div>
-        </nav>
         <?php include 'navbar.php'; ?>
-        <div class="container">
-            <div class="ContactInfo">
-                <div>
+    </section>
 
-                    <h2>Contact Info</h2>
-
-
-                    <ul class="info">
-                        <li>
-                            <span> <img src="location.png" alt="location"></span>
-                            <span>
-                                123-B B.R.S. Nagar<br> Ludhiana
-                            </span>
-                        </li>
-                        <li>
-                            <span> <img src="mail.png" alt="Email"></span>
-                            <span>
-                                techsevi@gmail.com
-                            </span>
-                        </li>
-                        <li>
-                            <span> <img src="call.png" alt="Phone No"></span>
-                            <span>
-                                5984621110
-                            </span>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <ul class="sci">
-                    <li><a href="#"><i class="fa fa-facebook-f fa-2x"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
-                </ul>
-
-            </div>
-            <form action="#" method="post">
+    <!-- Form Section -->
+    <div class="container">
+        <form action="" method="POST">
             <div class="Contactform">
-
                 <h2>Send Feedback</h2>
 
                 <div class="formbox">
                     <div class="inputbox w50">
-                        <input type="text" name=t1>
-                        <span>First name</span>
+                        <input type="text" name="t1" required>
+                        <span>First Name</span>
                     </div>
                     <div class="inputbox w50">
-                        <input type="text" name=t2>
-                        <span>Last name</span>
+                        <input type="text" name="t2" required>
+                        <span>Last Name</span>
                     </div>
                     <div class="inputbox w50">
-                        <input type="email" name=t3>
+                        <input type="email" name="t3" required>
                         <span>Email Address</span>
                     </div>
                     <div class="inputbox w50">
-                        <input type="text" name=t4>
+                        <input type="text" name="t4" required>
                         <span>Mobile No</span>
                     </div>
                     <div class="inputbox w100">
-                        <textarea name=t5></textarea>
-                        <span>Write your message</span>
+                        <textarea name="t5" required></textarea>
+                        <span>Write Your Message</span>
                     </div>
-
                 </div>
+
                 <div class="inputbox w100">
-                    <input type="submit" value="Send" name=b1>
+                    <input type="submit" value="Send" name="b1">
                 </div>
             </div>
-        </div>
         </form>
-    </section>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
         <div class="center">
             Copyright &copy; www.techsevi.com. All rights reserved!
         </div>
     </footer>
+
+    <!-- PHP Form Submission -->
     <?php
-    if(isset($_POST['b1']))
-    {
-        $t=0;
-        if(!empty($_POST['t1']))
-        {
-            $fn=$_POST['t1'];  
-        }
-        else
-        {
-            $t++;
-            echo "First Name cannot be empty";
-        }
-        if(!empty($_POST['t2']))
-        {
-            $ln=$_POST['t2'];   
-        }
-        else
-        {
-            $t++;
-            echo "Last Name cannot be empty";
-        }
-        if(!empty($_POST['t3']))
-        {
-            $e=$_POST['t3'];   
-        }
-        else
-        {
-            $t++;
-            echo "Email cannot be empty";
-        }
-        if(!empty($_POST['t4']))
-        {
-            $n=$_POST['t4'];    
-        }
-        else
-        {
-            $t++;
-            echo "Mobile cannot be empty";
-        }
-        if(!empty($_POST['t5']))
-        {
-            $m=$_POST['t5'];    
-        }
-        else
-        {
-            $t++;
-            echo "Mobile cannot be empty";
-        }
-        if($t==0)
-        {
-            $con=new mysqli("localhost","root","","technology");
-            if($con==true)
-            {
-                $q="insert into feedback(fname,lname,email,mobile,message) values('$fn','$ln','$e',$n,'$m')";
-                if($con->query($q)==true)
-                {
-                    echo "feedback submitted";
+    if (isset($_POST['b1'])) {
+        $errors = 0;
+
+        // Form validation
+        $fn = !empty($_POST['t1']) ? $_POST['t1'] : $errors++;
+        $ln = !empty($_POST['t2']) ? $_POST['t2'] : $errors++;
+        $email = !empty($_POST['t3']) ? $_POST['t3'] : $errors++;
+        $mobile = !empty($_POST['t4']) ? $_POST['t4'] : $errors++;
+        $message = !empty($_POST['t5']) ? $_POST['t5'] : $errors++;
+
+        if ($errors == 0) {
+            // Database connection
+            $con = new mysqli("localhost", "root", "", "technology");
+
+            if ($con->connect_error) {
+                echo "<script>alert('Database connection failed!');</script>";
+            } else {
+                $q = "INSERT INTO feedback (fname, lname, email, mobile, message) VALUES ('$fn', '$ln', '$email', '$mobile', '$message')";
+                if ($con->query($q) === TRUE) {
+                    echo "<script>alert('Feedback submitted successfully!');</script>";
+                } else {
+                    echo "<script>alert('Error submitting feedback.');</script>";
                 }
-                else
-                {
-                    echo "query problem";
-                }
+                $con->close();
             }
-            else
-            {
-                echo"connection problem";
-            }
+        } else {
+            echo "<script>alert('Please fill in all fields.');</script>";
         }
     }
     ?>
+
 </body>
 
 </html>

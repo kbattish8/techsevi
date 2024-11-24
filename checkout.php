@@ -230,7 +230,7 @@ include 'functions/cartfunc.php';
             // Handle errors
             onError: (err) => {
                 console.error('PayPal Checkout Error:', err);
-                alert('An error occurred while processing the payment. Please try again.');
+                // alert('An error occurred while processing the payment. Please try again.');
             },
         })
         .render("#paypal-button-container"); // Render the PayPal button

@@ -1,273 +1,120 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#navbar {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 98px;
-    margin-bottom: 10px;
-}
-
-#logo {
-    margin: 10px 34px;
-}
-
-#logo img {
-    height: 59px;
-    margin: 3px 6px;
-}
-
-#navbar::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.7;
-}
-
-#navbar ul {
-    font-size: 1.5rem;
-    display: flex;
-    font-family: 'Baloo Bhai', cursive;
-}
-
-#navbar ul li {
-    list-style: none;
-    font-size: 1.3rem;
-}
-
-#navbar ul li a {
-    color: white;
-    display: block;
-    padding: 3px 18px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1.3rem;
-}
-
-#navbar ul li a:hover {
-    color: black;
-    background-color: white;
-}
-
-.button {
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: grey;
-}
-
-section {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
+body {
+    font-family: Arial, sans-serif;
     background: white;
-}
-
-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: white;
-}
-
-.container {
-    margin-top: 75px;
-    position: relative;
-    min-width: 1100px;
-    min-height: 550px;
     display: flex;
-    z-index: 1000;
-}
-
-.container .ContactInfo {
-    position: absolute;
-    top: 40px;
-    width: 350px;
-    height: calc(100% - 80px);
-    /* background: #095a55; */
-    z-index: 1;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+/* Page Layout */
+.container {
+    flex: 1; /* Takes up the remaining height after navbar and footer */
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
-    background: #40c9a2;
+    padding: 20px;
 }
 
-.container .ContactInfo h2 {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.container .ContactInfo ul.info {
-    position: relative;
-    margin: 20px 0;
-}
-
-.container .ContactInfo ul.info li {
-    position: relative;
-    list-style: none;
+/* Left and Right Sections */
+.left-section,
+.right-section {
+    width: 48%;
     display: flex;
-    margin: 20px 0;
-    cursor: pointer;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
 
-.container .ContactInfo ul.info li span:nth-child(1) {
-    width: 30px;
-    min-width: 30px;
+/* Form Section */
+.right-section .formbox {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.container .ContactInfo ul.info li span:nth-child(1) img {
-    max-width: 100%;
-    filter: invert(1);
-}
-
-.container .ContactInfo ul.info li span:nth-child(2) {
-    color: #fff;
-    margin-left: 10px;
-    font-weight: 300;
-}
-
-.container .ContactInfo ul.sci {
-    position: relative;
-    display: flex;
-}
-
-.container .ContactInfo ul.sci li {
-    list-style: none;
-    margin-right: 15px;
-}
-
-.container .ContactInfo ul.sci li a {
-    text-decoration: none;
-}
-
-.container .ContactInfo ul.sci li a i {
-    color: #fff;
-}
-
-.container .Contactform {
-    margin-top: 50px;
-    position: absolute;
-    padding: 70px 50px;
-    padding-left: 250px;
-    margin-left: 150px;
-    width: calc(100% - 150px);
-    height: 540px;
-    background: #fff;
-    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25)
-}
-
-.container .Contactform h2 {
+.right-section .formbox h2 {
     color: #40c9a2;
-    /* color: #0f3959; */
     font-size: 24px;
-    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.container .Contactform .formbox {
+.inputbox {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 30px;
+    margin-bottom: 20px;
 }
 
-.container .Contactform .formbox .inputbox {
-    position: relative;
-    margin-bottom: 35px;
-}
-
-.container .Contactform .formbox .inputbox .w50 {
-    width: 47%;
-}
-
-.container .Contactform .formbox .inputbox .w100 {
+.inputbox input,
+.inputbox textarea {
     width: 100%;
-}
-
-.container .Contactform .formbox .inputbox input,
-.container .Contactform .formbox .inputbox textarea {
-    width: 100%;
-    resize: none;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: 300;
-    color: #333;
-    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
     outline: none;
-    border-bottom: 1px solid red;
 }
 
-.container .Contactform .formbox .inputbox textarea {
-    height: 120px;
+.inputbox input:focus,
+.inputbox textarea:focus {
+    border-color: #40c9a2;
 }
 
-.container .Contactform .formbox .inputbox span {
+.inputbox span {
     position: absolute;
-    left: 0;
-    padding: 5px 0;
+    left: 10px;
+    top: 10px;
+    font-size: 16px;
+    color: #999;
     pointer-events: none;
-    font-size: 18px;
-    font-weight: 300;
     transition: 0.3s;
 }
 
-.container .Contactform .formbox .inputbox input:focus~span,
-.container .Contactform .formbox .inputbox input:valid~span,
-.container .Contactform .formbox .inputbox textarea:focus~span,
-.container .Contactform .formbox .inputbox textarea:valid~span {
-    transform: translateY(-20px);
+.inputbox input:focus + span,
+.inputbox input:not(:placeholder-shown) + span,
+.inputbox textarea:focus + span,
+.inputbox textarea:not(:placeholder-shown) + span {
+    top: -20px;
+    left: 10px;
     font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    /* color: #095a55; */
-    font-weight: 500;
     color: #40c9a2;
 }
 
-.container .Contactform .inputbox input[type="submit"] {
-    position: relative;
-    cursor: pointer;
-    /* background: #095a55; */
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 13px;
-    width: 150px;
+.button {
+    width: 100%;
+    padding: 10px;
     background: #40c9a2;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.container .Contactform .inputbox input[type="submit"]:hover {
-    background: #0d948b;
+.button:hover {
+    background: #35a288;
 }
 
+/* Footer */
 footer {
     background: black;
     color: white;
-    padding: 9px 20px;
     text-align: center;
-}
-
-.icons {
-    margin-left: 525px;
-    color: rgb(254, 254, 254);
+    padding: 10px 0;
+    margin-top: auto;
 }

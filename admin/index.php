@@ -58,7 +58,7 @@ include('../middleware/adminmiddle.php');
                                     <h4 class="mb-0">3,462</h4>
                                 </div>
                                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                                    <i class="fa fa-chart-line" style="color: white;"></i>
+                                <i class="fa fa-line-chart" style="color:white;"></i>
                                 </div>
                             </div>
                         </div>
